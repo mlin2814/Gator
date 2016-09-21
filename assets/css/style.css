@@ -1,0 +1,16 @@
+body{
+	background-color: #2962ff;
+	background-image: url("../images/gatorbg.jpg");
+}
+
+img{
+	max-height: 100%;
+}
+
+.fixed-action-btn{
+	bottom: 45px; right: 24px;
+}
+
+.logo{
+	text-align: center;
+}
