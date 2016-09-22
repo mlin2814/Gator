@@ -1,9 +1,12 @@
 .container {
 	text-align: center;
 	background-color: #530132;
-	color: ;
+	color: #563f95;
 }
 
+p {
+	font-size: 22px;
+}
 
 img {
 	align-content: center;
