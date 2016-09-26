@@ -8,10 +8,10 @@
   };
   firebase.initializeApp(config);
 
-  //Grabs the JSON and parses it for the default subreddits. This code should be designed to only execute when the user isnt logged in.
+  //Reddit- Grabs the JSON and parses it for the default subreddits. This code should be designed to only execute when the user isnt logged in.
   $.getJSON(
         "http://www.reddit.com/r/news+worldnews.json?jsonp=?",
-        function foo(data)
+        function postUp(data)
         { console.log(data)
           $.each(
             data.data.children.slice(0, 25),
@@ -21,3 +21,17 @@
           )
         }
       );
+
+  //Twitter- 
+
+
+  //CNN- 
+  // $.getJSON(
+  // 	"http://www.cnn.com/newsgraph/search/ sort:<query-key>,<asc|desc>/",
+  // 	function grabArticles(data){
+  // 		console.log(data);
+  // 		$.each(
+  // 			function(i,post){
+  // 				$('#cnn').append("<li class = 'collection-item avatar><img src = '"+post.data.url+"' alt ='' class = 'circle><span class='title'>" + post.data.title+"</span><br><a href = '"+post.data.url+"'>View on Reddit!</a></li>");
+  // 			})
+  // 	}
