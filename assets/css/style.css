@@ -12,7 +12,8 @@ img{
 }
 
 .logo{
-	text-align: center;
+	margin: 0 auto;
+	right: 50%;
 }
 
 img{
