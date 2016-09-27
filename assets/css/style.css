@@ -1,10 +1,20 @@
 body{
 	background-color: black;
 	background-image: url("../images/gatorbg.png");
+	font-family: 'Cherry Cream Soda', cursive;
+
 }
 
 img{
 	max-height: 100%;
+}
+.btn {  
+    background-color: #87c2ff;
+}
+
+.blue-grey {
+    background-color: rgb(58, 102, 101) !important;
+    opacity:;
 }
 
 .fixed-action-btn{
@@ -23,7 +33,13 @@ img{
 }
 
 .topicon{
-	margin-left: 42%;
+	margin-left: 40%;
+}
+.topiconRED{
+	margin-left: 25%;
+}
+.topiconNY{
+	margin-left: 10%;
 }
 
 #alpha{
@@ -46,14 +62,26 @@ img{
 
 #scrollbox::-webkit-scrollbar-thumb{
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-    background-color:   #3399ff;
+    background-color:   #87c2ff;
 }
 
 #scrollbox::-webkit-scrollbar-track{
-    background-color: #000000;
+    background-color: silver;
 }
 
 .padded-row{
 	margin-right: 40px;
 	margin-left: 40px;
+}
+
+.btn-floating { 
+    background-color: #87c2ff;
+}
+/*.validate {
+	background-color: #808080;
+}*/
+h1{
+    font-size: 15px;
+    color: silver;
+    margin: 0 0 0 675px;
 }
