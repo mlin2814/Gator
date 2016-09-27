@@ -22,8 +22,35 @@
         }
       );
 
-  //Twitter- 
+  //NYT- Grabs the JSON for the search criteria. Review this as it is not fully working just yet. 
 
+var nytApiKey = "&api-key=0a156cdac7664279a87c57512ec0bbe7";
+var q;
+var queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+var number;
+
+function getArticle(){
+  //q should be a value from the database. Not currently working.
+  q = "?q=google"//+$('#searchTerm').val().trim();
+  queryURL+= q; 
+  console.log(queryURL);
+  //Sets the number of articles to return based on the number selected by the user.
+  number = 25;
+  //Completes the queryURL by adding the APIkey to the end. 
+  queryURL+= nytApiKey;
+  console.log(queryURL);
+
+  //Runs the query and appends each article to the #wellSection inside of its own well. 
+    $.ajax({url: queryURL, method: 'GET'}).done(function(response) {
+      console.log(response);
+      for(var i = 0; i < number; i++){
+        $('#nyt').append("<li class = 'collection-item avatar' id = 'article-'"+i+"><span class = 'title'>"+response.response.docs[i].headline.main+"</span><p>"+response.response.docs[i].abstract+"</p><p>Read more at: </p><a href ='"+response.response.docs[i].web_url+"'>"+response.response.docs[i].web_url+"</a></div>");       
+      }
+    });
+    queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
+return false; 
+}
+getArticle();
 
   //CNN- 
   // $.getJSON(
