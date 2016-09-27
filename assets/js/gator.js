@@ -7,7 +7,13 @@
     messagingSenderId: "866976750728"
   };
   firebase.initializeApp(config);
-
+$(document).ready(function(){
+  $('.modal-trigger').leanModal({
+    dismissible: true, 
+    opacity: 0.15,
+    starting_top: '50%'
+  });
+})
   //Reddit- Grabs the JSON and parses it for the default subreddits. This code should be designed to only execute when the user isnt logged in.
   $.getJSON(
         "http://www.reddit.com/r/news+worldnews.json?jsonp=?",
