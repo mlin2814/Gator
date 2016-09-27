@@ -14,15 +14,18 @@ img{
 .logo{
 	margin: 0 auto;
 	right: 50%;
+	height: 20%;
+	width: 20%;
 }
 
-img{
-	height: 25%;
-	width: 25%;
-}
 #row1{
 	margin-bottom: 1px;
 }
+
+.topicon{
+	margin-left: 42%;
+}
+
 #alpha{
 	opacity: .6;
 }
@@ -32,10 +35,9 @@ img{
 }
 
 #scrollbox{
-    height: 700px;
+    height: 650px;
     overflow-y: scroll;
 }
-
 
 #scrollbox::-webkit-scrollbar{
     width: 12px;
