@@ -8,7 +8,7 @@
   };
   firebase.initializeApp(config);
 
-  //Reddit- Grabs the JSON and parses it for the default subreddits. This code should be designed to only execute when the user isnt logged in.
+//Reddit- Grabs the JSON and parses it for the default subreddits. This code should be designed to only execute when the user isnt logged in.
   $.getJSON(
         "http://www.reddit.com/r/news+worldnews.json?jsonp=?",
         function postUp(data)
@@ -22,7 +22,7 @@
         }
       );
 
-  //NYT- Grabs the JSON for the search criteria. Review this as it is not fully working just yet. 
+//NYT- Grabs the JSON for the search criteria. Review this as it is not fully working just yet. 
 
 var nytApiKey = "&api-key=0a156cdac7664279a87c57512ec0bbe7";
 var q;
@@ -33,12 +33,10 @@ function getArticle(){
   //q should be a value from the database. Not currently working.
   q = "?q=google"//+$('#searchTerm').val().trim();
   queryURL+= q; 
-  console.log(queryURL);
   //Sets the number of articles to return based on the number selected by the user.
   number = 25;
   //Completes the queryURL by adding the APIkey to the end. 
   queryURL+= nytApiKey;
-  console.log(queryURL);
 
   //Runs the query and appends each article to the #wellSection inside of its own well. 
     $.ajax({url: queryURL, method: 'GET'}).done(function(response) {
@@ -52,13 +50,15 @@ return false;
 }
 getArticle();
 
-  //CNN- 
-  // $.getJSON(
-  // 	"http://www.cnn.com/newsgraph/search/ sort:<query-key>,<asc|desc>/",
-  // 	function grabArticles(data){
-  // 		console.log(data);
-  // 		$.each(
-  // 			function(i,post){
-  // 				$('#cnn').append("<li class = 'collection-item avatar><img src = '"+post.data.url+"' alt ='' class = 'circle><span class='title'>" + post.data.title+"</span><br><a href = '"+post.data.url+"'>View on Reddit!</a></li>");
-  // 			})
-  // 	}
+//NPR API- Grabs the JSON for the search criteria.
+
+var nprAPIKey = "MDI2OTU2OTcxMDE0NzUwMjM5NjYwZDAxNQ000";
+var nprQuery = "android"; 
+var nprQueryUrl = "http://api.npr.org/query?requiredAssets=text,image&searchTerm="+nprQuery+"&dateType=story&output=JSON&searchType=fullContent&apiKey="+nprAPIKey;
+
+$.ajax({url: nprQueryUrl, method: 'GET'}).done(function(response){
+  console.log(response);
+  for(var i = 0; i < 10; i++){
+      $('#npr').append("<li class = 'collection-item avatar' id = 'article-'"+i+"><span class = 'title'>"+response.list.story[i].title.$text+"</span><p>"+response.list.story[i].teaser.$text+"</p><p>Read more at: </p><a href ='"+response.list.story[i].link.$text+"'>View on NPR!</a></div>");       
+  }
+})
