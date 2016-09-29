@@ -17,15 +17,28 @@
     <img class="logo" src = "assets/images/gator.png">
 </div>
 
+<!-- SEARCH --> 
+
+  <nav>
+    <div class="nav-wrapper">
+      <form>
+        <div class="input-field">
+          <input id="search" type="search" required>
+          <label for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons">close</i>
+        </div>
+      </form>
+    </div>
+  </nav>
+
 <!--BEGIN CONTENT AREA-->
 <div class="row padded-row">
     <!--NPR CONTENT-->        
     <div class="col s4 m4">
         <div class="card blue-grey">
             <div class="card-content">
-                <img src="assets/images/redditicon.png" alt="redditicon"  class="topicon" height="15%" width="15%">
+                <img src="assets/images/nprlogo.png" alt="npr"  class="topiconNPR" height="38%" width="38%">
                 <div class="card-action" id="scrollbox">
-                	 <input placeholder = "Search all of Twitter" id = "twitSearch" type = "text" class = "validate">
                 <ul class = "collection" id = "npr">
                 </ul>
                 </div>
@@ -38,7 +51,6 @@
             <div class="card-content">
                 <img src="assets/images/redditlogo.png" alt="redditicon"  class="topiconRED" height="45%" width="45%">
                 <div class="card-action" id="scrollbox">
-                	   <input placeholder = "Search all of Reddit" id = "redditSearch" type = "text" class = "validate">
                 <ul class = "collection" id = "reddit">
                 </ul>
                 </div>
@@ -51,7 +63,6 @@
             <div class="card-content">
                 <img src="assets/images/nytimes.png" alt="NYTicon"  class="topiconNY" height="75%" width="75%">
                 <div class="card-action" id="scrollbox">
-                    <input placeholder = "Search all of NYT" id = "nytSearch" type = "text" class = "validate">
                 <ul class = "collection" id = "nyt">
                 </ul>
                 </div>
@@ -59,6 +70,9 @@
     </div>
     </div>
 </div>
+<h2>&#169; Copyright 2016 The Team of Distinguished Gentlemen</h2>
+        </div>   
+
 <!--FIXED ACTION BUTTON TO ADD NEW CONTENT-->
 <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
 		<a class="btn-floating btn-large waves-effect waves"><i class="material-icons">add</i></a>
