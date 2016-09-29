@@ -1,3 +1,4 @@
+
 // Initialize Firebase
   var config = {
     apiKey: "AIzaSyCA22_-RWAMuD6vTue3XwjmBlp-0kwCniw",
@@ -7,7 +8,20 @@
     messagingSenderId: "866976750728"
   };
   firebase.initializeApp(config);
+//Google Login- Sets up the code to allow a user to authenticate with Google on Firebase. 
+// FirebaseUI config.
+      var uiConfig = {
+        'signInSuccessUrl': '<url-to-redirect-to-on-success>',
+        'signInOptions': [
+          // Leave the lines as is for the providers you want to offer your users.
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        ]
+      };
 
+      // Initialize the FirebaseUI Widget using Firebase.
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      // The start method will wait until the DOM is loaded.
+      ui.start('#firebaseui-auth-container', uiConfig);
 //Reddit- Grabs the JSON and parses it for the default subreddits. This code should be designed to only execute when the user isnt logged in.
   $.getJSON(
         "http://www.reddit.com/r/news+worldnews.json?jsonp=?",
@@ -57,7 +71,7 @@ var nprQuery = "android";
 var nprQueryUrl = "http://api.npr.org/query?requiredAssets=text,image&searchTerm="+nprQuery+"&dateType=story&output=JSON&searchType=fullContent&apiKey="+nprAPIKey;
 
 $.ajax({url: nprQueryUrl, method: 'GET'}).done(function(response){
-  console.log(response);
+  console.log(response.list);
   for(var i = 0; i < 10; i++){
       $('#npr').append("<li class = 'collection-item avatar' id = 'article-'"+i+"><span class = 'title'>"+response.list.story[i].title.$text+"</span><p>"+response.list.story[i].teaser.$text+"</p><p>Read more at: </p><a href ='"+response.list.story[i].link.$text+"'>View on NPR!</a></div>");       
   }
