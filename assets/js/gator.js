@@ -87,8 +87,9 @@ var nprQuery = "android";
 var nprQueryUrl = "https://api.npr.org/query?requiredAssets=text,image&searchTerm="+nprQuery+"&dateType=story&output=JSON&searchType=fullContent&apiKey="+nprAPIKey;
 
 $.ajax({url: nprQueryUrl, method: 'GET'}).done(function(response){
-  console.log(response.list);
-  for(var i = 0; i < 10; i++){
-      $('#npr').append("<li class = 'collection-item avatar' id = 'article-'"+i+"><span class = 'title'>"+response.list.story[i].title.$text+"</span><p>"+response.list.story[i].teaser.$text+"</p><p>Read more at: </p><a href ='"+response.list.story[i].link.$text+"'>View on NPR!</a></div>");       
-  }
+ var npr = JSON.parse(response);
+ console.log(npr.list);
+ for(var i = 0; i < 10; i++){
+     $('#npr').append("<li class = 'collection-item avatar' id = 'article-'"+i+"><span class = 'title'>"+npr.list.story[i].title.$text+"</span><p>"+npr.list.story[i].teaser.$text+"</p><p>Read more at: </p><a href ='"+npr.list.story[i].link.$text+"'>View on NPR!</a></div>");       
+ }
 })
