@@ -9,6 +9,28 @@ body{
 img{
 	max-height: 100%;
 }
+
+nav {
+    background-color: rgb(58, 102, 101) !important;
+	border-radius: 10px;
+	opacity:.75;
+    width: 500px;
+    height: 60px;
+    margin:0 0 40px 430px;
+}
+
+.collection .collection-item.avatar .title {
+    font-size: 12px;
+    padding: 0px;
+}
+
+.collection .collection-item.avatar{
+	padding: 10px 20px;
+}
+
+.collection .collection-item{
+	padding: 10px 20px;
+}
 .btn {  
     background-color: #87c2ff;
 }
@@ -27,14 +49,15 @@ img{
 	right: 50%;
 	height: 20%;
 	width: 20%;
+	padding: 20px 0 10px 0;
 }
 
 #row1{
 	margin-bottom: 1px;
 }
 
-.topicon{
-	margin-left: 40%;
+.topiconNPR{
+	margin-left: 30%;
 }
 .topiconRED{
 	margin-left: 25%;
@@ -52,7 +75,7 @@ img{
 }
 
 #scrollbox{
-    height: 500px;
+    height: 650px;
     overflow-y: scroll;
 }
 
@@ -78,11 +101,25 @@ img{
 .btn-floating { 
     background-color: #87c2ff;
 }
-/*.validate {
-	background-color: #808080;
-}*/
+.card .card-action {
+	padding: 5px;
+	border-top: 0px;
+}
+
+.card {
+	height: 800px;
+	border-radius: 20px;
+	margin: 5px 0 2px 0;
+}
+
 h1{
     font-size: 20px;
     color: silver;
-    margin: 0 0 0 1150px;
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+h2{
+    font-size: 15px;
+    color: silver;
+    margin: 0 0 0 500px;
 }
