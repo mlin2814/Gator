@@ -8,20 +8,36 @@
     messagingSenderId: "866976750728"
   };
   firebase.initializeApp(config);
-//Google Login- Sets up the code to allow a user to authenticate with Google on Firebase. 
-// FirebaseUI config.
-      var uiConfig = {
-        'signInSuccessUrl': '<url-to-redirect-to-on-success>',
-        'signInOptions': [
-          // Leave the lines as is for the providers you want to offer your users.
-          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-        ]
-      };
 
-      // Initialize the FirebaseUI Widget using Firebase.
-      var ui = new firebaseui.auth.AuthUI(firebase.auth());
-      // The start method will wait until the DOM is loaded.
-      ui.start('#firebaseui-auth-container', uiConfig);
+//Google Login- Sets up the code to allow a user to authenticate with Google on Firebase. 
+var provider = new firebase.auth.GoogleAuthProvider();
+console.log(provider);
+function googleSignIn(){
+  firebase.auth().signInWithPopup(provider).then(function(result) {
+  // This gives you a Google Access Token. You can use it to access the Google API.
+  var token = result.credential.accessToken;
+  // The signed-in user info.
+  var user = result.user;
+  // ...
+}).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // The email of the user's account used.
+  var email = error.email;
+  // The firebase.auth.AuthCredential type that was used.
+  var credential = error.credential;
+  console.log("Error Code: "+errorCode);
+  console.log("Error Message: "+errorMessage);
+  // ...
+});
+}
+
+//Jquery onclick event to handle the googleSignIn function. 
+$(document).on('click', '#google', function(){
+  googleSignIn()
+});
+
 //Reddit- Grabs the JSON and parses it for the default subreddits. This code should be designed to only execute when the user isnt logged in.
   $.getJSON(
         "http://www.reddit.com/r/news+worldnews.json?jsonp=?",
