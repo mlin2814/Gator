@@ -72,7 +72,7 @@ function getArticle(){
     $.ajax({url: queryURL, method: 'GET'}).done(function(response) {
       console.log(response);
       for(var i = 0; i < number; i++){
-        $('#nyt').append("<li class = 'collection-item avatar' id = 'article-'"+i+"><span class = 'title'>"+response.response.docs[i].headline.main+"</span><p>"+response.response.docs[i].abstract+"</p><p>Read more at: </p><a href ='"+response.response.docs[i].web_url+"'>"+response.response.docs[i].web_url+"</a></div>");       
+        $('#nyt').append("<li class = 'collection-item avatar' id = 'article-'"+i+"><span class = 'title'>"+response.response.docs[i].headline.main+"</span><br><a href ='"+response.response.docs[i].web_url+"'>View on New York Times!</a></div>");       
       }
     });
     queryURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json";
