@@ -14,9 +14,10 @@ nav {
     background-color: rgb(58, 102, 101) !important;
 	border-radius: 10px;
 	opacity:.75;
-    width: 500px;
+    width: 50%;
     height: 60px;
-    margin:0 0 40px 430px;
+    margin:0 auto; 
+    margin-bottom: 2%;
 }
 
 .collection .collection-item.avatar .title {
@@ -121,5 +122,5 @@ h1{
 h2{
     font-size: 15px;
     color: silver;
-    margin: 0 0 0 500px;
+    margin: 0 auto;
 }
