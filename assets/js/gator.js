@@ -40,7 +40,7 @@ $(document).on('click', '#google', function(){
 
 //Reddit- Grabs the JSON and parses it for the default subreddits. This code should be designed to only execute when the user isnt logged in.
   $.getJSON(
-        "http://www.reddit.com/r/news+worldnews.json?jsonp=?",
+        "https://www.reddit.com/r/news+worldnews.json?jsonp=?",
         function postUp(data)
         { console.log(data)
           $.each(
@@ -84,7 +84,7 @@ getArticle();
 
 var nprAPIKey = "MDI2OTU2OTcxMDE0NzUwMjM5NjYwZDAxNQ000";
 var nprQuery = "android"; 
-var nprQueryUrl = "http://api.npr.org/query?requiredAssets=text,image&searchTerm="+nprQuery+"&dateType=story&output=JSON&searchType=fullContent&apiKey="+nprAPIKey;
+var nprQueryUrl = "https://api.npr.org/query?requiredAssets=text,image&searchTerm="+nprQuery+"&dateType=story&output=JSON&searchType=fullContent&apiKey="+nprAPIKey;
 
 $.ajax({url: nprQueryUrl, method: 'GET'}).done(function(response){
   console.log(response.list);
