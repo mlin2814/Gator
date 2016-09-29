@@ -9,6 +9,8 @@
   };
   firebase.initializeApp(config);
 
+var user, name, email, preferences;
+
 //Google Login- Sets up the code to allow a user to authenticate with Google on Firebase. 
 var provider = new firebase.auth.GoogleAuthProvider();
 console.log(provider);
@@ -19,6 +21,7 @@ function googleSignIn(){
   // The signed-in user info.
   var user = result.user;
   // ...
+
 }).catch(function(error) {
   // Handle Errors here.
   var errorCode = error.code;
@@ -35,7 +38,20 @@ function googleSignIn(){
 
 //Jquery onclick event to handle the googleSignIn function. 
 $(document).on('click', '#google', function(){
-  googleSignIn()
+  googleSignIn();
+  if(user){
+    user = firebase.auth().currentUser;
+    name = user.displayName;
+    email = user.email;
+    console.log(user);
+    console.log(name);
+    console.log(email);
+    
+    $('#signin').html("<a class='waves-effect waves-light btn' id = 'google'>Signed in with Google</a>")
+  }
+  else(){
+    $('#signin').append("<p>Sorry, sign in failed. Please try again");
+  }
 });
 
 //Reddit- Grabs the JSON and parses it for the default subreddits. This code should be designed to only execute when the user isnt logged in.
