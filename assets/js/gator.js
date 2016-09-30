@@ -30,6 +30,7 @@ function googleSignIn(){
   console.log("Error Code: "+errorCode);
   console.log("Error Message: "+errorMessage);
   // ...
+  $('#signIn').html("<a class='waves-effect waves-light btn' id = 'signedIn>Signed In</a>");
 });
 }
 
