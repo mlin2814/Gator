@@ -132,7 +132,7 @@ function nprSearch(searchTerm){
     var npr = JSON.parse(response);
     console.log(npr.list);
   for(var i = 0; i < 10; i++){
-     $('#npr').append("<li class = 'collection-item avatar' id = 'article-'"+i+"><span class = 'title'>"+npr.list.story[i].title.$text+"</span><p>"+npr.list.story[i].teaser.$text+"</p><p>Read more at: </p><a href ='"+npr.list.story[i].link.$text+"'>View on NPR!</a></div>");       
+     $('#npr').append("<li class = 'collection-item avatar' id = 'article-'"+i+"><span class = 'title'>"+npr.list.story[i].title.$text+"</span><p>"+npr.list.story[i].teaser.$text+"</p><a href ='"+npr.list.story[i].link.$text+"'>View on NPR!</a></div>");       
   }
   })
 }
