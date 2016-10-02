@@ -5,6 +5,7 @@ A Mulit-Source News Aggregator
 Gator is a multi-source news aggregator. This means that our application is used to pull information on specific topics via multiple news APIs. Gator currently supports Reddit, NPR and New York Times. 
 
 #Technologies Used
+Materialize
 HTML  
 CSS  
 Javascript  
