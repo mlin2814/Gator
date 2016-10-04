@@ -6,6 +6,7 @@ Gator is a multi-source news aggregator. This means that our application is used
 
 #Technologies Used
 Materialize
+
 HTML  
 CSS  
 Javascript  
